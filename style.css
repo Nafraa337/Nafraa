@@ -1,0 +1,363 @@
+/* style.css - Satu file CSS untuk Seluruh Website */
+
+/* Import Google Fonts - Poppins (for general text) and Michroma (for bold headings/logo) */
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Poppins:wght@300;400;600;700&display=swap');
+
+/* --- General & Common Base Styles --- */
+html { font-size: 16px; } /* Base for REM units */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0; padding: 0; line-height: 1.7; color: #e0e0e0; background-color: #121212; overflow-x: hidden; font-size: 1rem;
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+a { color: #00e676; transition: color 0.3s ease; text-decoration: none; } /* Default green for links */
+a:hover { color: #00c853; }
+.btn {
+    display: inline-block; padding: 0.875rem 2rem; border-radius: 0.5rem; text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    font-weight: 600; text-transform: uppercase; letter-spacing: 0.0625rem;
+    box-shadow: 0 0.375rem 0.9375rem rgba(0, 230, 118, 0.3); cursor: pointer; border: none; font-size: 1rem;
+}
+.btn:hover { transform: translateY(-0.1875rem); box-shadow: 0 0.625rem 1.25rem rgba(0, 230, 118, 0.4); }
+.primary-btn { background-color: #00e676; color: #121212; }
+.primary-btn:hover { background-color: #00c853; }
+.secondary-btn { background-color: #333; color: #fff; margin-left: 0.9375rem; box-shadow: 0 0.375rem 0.9375rem rgba(0,0,0,0.3); }
+.secondary-btn:hover { background-color: #555; box-shadow: 0 0.625rem 1.25rem rgba(0,0,0,0.4); }
+.small-btn { background-color: #6200ea; color: #fff; padding: 0.625rem 1.375rem; font-size: 0.85em; border-radius: 0.5rem; box-shadow: 0 0.25rem 0.625rem rgba(98, 0, 234, 0.3); }
+.small-btn:hover { background-color: #4b00c2; box-shadow: 0 0.375rem 0.9375rem rgba(98, 0, 234, 0.4); transform: translateY(-0.125rem); }
+
+h1, h2, h3 { font-family: 'Michroma', sans-serif; color: #fff; text-align: center; margin-bottom: 1.875rem; font-weight: 700; text-shadow: 0.125rem 0.125rem 0.3125rem rgba(0, 0, 0, 0.5); }
+h1 { font-size: 4.5rem; } h2 { font-size: 2.8rem; } h3 { font-size: 2rem; } h4 { font-family: 'Poppins', sans-serif; color: #fff; font-weight: 600; margin: 0; text-align: center; }
+
+header { background-color: #1e1e1e; color: #fff; padding: 1.25rem 0; box-shadow: 0 0.3125rem 0.9375rem rgba(0,0,0,0.5); position: sticky; top: 0; z-index: 1000; border-bottom: 0.0625rem solid rgba(255,255,255,0.1); }
+header .container { display: flex; justify-content: space-between; align-items: center; }
+.logo a { font-family: 'Michroma', sans-serif; color: #00e676; font-size: 2.5rem; font-weight: 900; text-shadow: 0.1875rem 0.1875rem 0.4375rem rgba(0, 0, 0, 0.7); }
+.main-nav ul { list-style: none; margin: 0; padding: 0; display: flex; }
+.main-nav ul li { margin-left: 2.5rem; }
+.main-nav ul li a { color: #e0e0e0; font-weight: 600; padding: 0.5rem 0; position: relative; font-size: 1.1em; transition: color 0.3s ease; }
+.main-nav ul li a::after { content: ''; position: absolute; left: 0; bottom: -0.5rem; width: 0; height: 0.1875rem; background-color: #00e676; transition: width 0.3s ease; }
+.main-nav ul li a:hover { color: #fff; }
+.main-nav ul li a:hover::after { width: 100%; }
+.nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 2rem; cursor: pointer; }
+
+.section-description { text-align: center; font-size: 1.3em; color: #c0c0c0; max-width: 56.25rem; margin: 0 auto 4.375rem; }
+.content-section { padding: 6.25rem 0; background-color: #121212; }
+.content-section.grey-bg { background-color: #1a1a1a; } /* Joki punya background ini */
+
+footer { background-color: #1a1a1a; color: #fff; padding: 3.75rem 0 2.1875rem; text-align: center; border-top: 0.0625rem solid rgba(255,255,255,0.1); }
+.footer-content { display: flex; justify-content: space-around; flex-wrap: wrap; margin-bottom: 3.125rem; }
+.footer-info, .footer-social { flex-basis: 45%; margin-bottom: 1.875rem; }
+.footer-info h3, .footer-social h3 { font-family: 'Michroma', sans-serif; color: #00e676; margin-bottom: 1.5625rem; font-size: 1.6em; text-transform: uppercase; letter-spacing: 0.05rem; }
+.footer-info p { margin-bottom: 0.9375rem; font-size: 1em; color: #c0c0c0; }
+.footer-info i { margin-right: 0.75rem; color: #6200ea; font-size: 1.1em; }
+.footer-social a { color: #fff; font-size: 2.2em; margin: 0 0.9375rem; transition: color 0.3s ease, transform 0.2s ease; }
+.footer-social a:hover { color: #00e676; transform: translateY(-0.3125rem) scale(1.1); }
+.footer-bottom { border-top: 0.0625rem solid rgba(255,255,255,0.08); padding-top: 1.875rem; font-size: 0.9em; color: #888; }
+/* --- END: Common Base Styles --- */
+
+
+/* --- Specific Styles for index.html --- */
+.hero-section {
+    position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center;
+    min-height: 43.75rem; overflow: hidden; box-shadow: inset 0 -0.9375rem 1.875rem rgba(0,0,0,0.7);
+}
+.slideshow-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; margin: auto; overflow: hidden; border-radius: 0; box-shadow: none; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+.slideshow-container img { width: 100%; height: 100%; position: absolute; top: 0; left: 0; object-fit: cover; filter: brightness(40%); }
+.hero-content { position: relative; z-index: 2; color: #fff; text-align: center; padding: 1.875rem; max-width: 62.5rem; }
+.hero-content h1 { font-size: 4.5rem; margin-bottom: 1.875rem; color: #fff; text-shadow: 0.25rem 0.25rem 0.625rem rgba(0, 0, 0, 0.8); line-height: 1.1; }
+.hero-content p { font-size: 1.6rem; margin-bottom: 3.125rem; max-width: 56.25rem; color: #c0c0c0; text-shadow: 0.0625rem 0.0625rem 0.1875rem rgba(0, 0, 0, 0.5); }
+.hero-buttons { margin-top: 1.875rem; }
+.prev, .next, .dot { display: none; }
+
+.feature-section {
+    padding: 6.25rem 0; text-align: center; background-color: #121212;
+}
+.feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr)); gap: 3.125rem; margin-top: 3.75rem; }
+.feature-card {
+    background-color: #1e1e1e; border-radius: 0.75rem; box-shadow: 0 0.625rem 1.875rem rgba(0,0,0,0.6); padding: 3.125rem;
+    text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; border: 0.0625rem solid rgba(255,255,255,0.05);
+    position: relative; overflow: hidden;
+}
+.feature-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 0.3125rem; background: linear-gradient(to right, #00e676, #6200ea); transform: translateY(-100%); transition: transform 0.3s ease; }
+.feature-card:hover::before { transform: translateY(0); }
+.feature-card:hover { transform: translateY(-0.625rem); box-shadow: 0 0.9375rem 2.5rem rgba(0,0,0,0.8); }
+.feature-card .icon-large { font-size: 4em; color: #00e676; margin-bottom: 1.875rem; text-shadow: 0.125rem 0.125rem 0.5rem rgba(0,0,0,0.7); }
+.feature-card h3 { font-family: 'Michroma', sans-serif; font-size: 2.2em; margin-bottom: 1.25rem; color: #fff; }
+.feature-card p { font-size: 1.1em; color: #c0c0c0; margin-bottom: 2.1875rem; }
+
+.testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr)); gap: 2.5rem; margin-top: 3.75rem; }
+.testimonial-card {
+    background-color: #1e1e1e; border-left: 0.3125rem solid #00e676; border-radius: 0.75rem;
+    box-shadow: 0 0.5rem 1.5625rem rgba(0,0,0,0.5); padding: 2.1875rem; color: #e0e0e0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; border: 0.0625rem solid rgba(255,255,255,0.05);
+}
+.testimonial-card:hover { transform: translateY(-0.625rem); box-shadow: 0 0.75rem 2.1875rem rgba(0,0,0,0.7); }
+.testimonial-card p { font-style: italic; margin-bottom: 1.125rem; color: #c0c0c0; font-size: 1.05em; }
+.testimonial-card h4 { text-align: right; color: #fff; margin-top: 0; font-size: 1.2em; font-weight: 600; }
+
+
+/* --- Specific Styles for Top Up Pages (topup.html, topup-freefire.html, topup-mobilelegends.html) --- */
+
+/* Gaya untuk halaman topup.html (pemilihan game) */
+.game-selection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr));
+    gap: 3.125rem;
+    margin-top: 3.75rem;
+    justify-content: center;
+}
+.game-select-card {
+    background-color: #1e1e1e; border-radius: 0.75rem; box-shadow: 0 0.625rem 1.875rem rgba(0,0,0,0.6); padding: 2.5rem;
+    text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 0.0625rem solid rgba(255,255,255,0.05); display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden;
+}
+.game-select-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 0.3125rem; background: linear-gradient(to right, #00e676, #6200ea); transform: translateY(-100%); transition: transform 0.3s ease; }
+.game-select-card:hover::before { transform: translateY(0); }
+.game-select-card:hover { transform: translateY(-0.625rem); box-shadow: 0 0.9375rem 2.5rem rgba(0,0,0,0.8); border-color: rgba(255,255,255,0.1); }
+.game-select-card img { max-width: 12.5rem; height: 12.5rem; object-fit: contain; border-radius: 0.5rem; margin-bottom: 1.5625rem; border: 0.1875rem solid #6200ea; box-shadow: 0 0 1.25rem rgba(98, 0, 234, 0.7); transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
+.game-select-card:hover img { transform: scale(1.08); box-shadow: 0 0 1.5625rem rgba(0, 230, 118, 0.9); border-color: #00e676; }
+.game-select-card h3 { font-family: 'Michroma', sans-serif; font-size: 2.5em; color: #fff; margin-bottom: 0; text-shadow: 0.0625rem 0.0625rem 0.1875rem rgba(0,0,0,0.5); }
+
+
+/* Gaya untuk halaman detail Top Up (topup-freefire.html, topup-mobilelegends.html) */
+/* Selector dispesifikasikan ke ID section agar tidak mempengaruhi topup.html */
+section#topup-ff .sub-header-bar,
+section#topup-ml .sub-header-bar {
+    background-color: #1a1a1a; padding: 0.8rem 0; font-size: 0.9rem; border-bottom: 0.0625rem solid rgba(255,255,255,0.05);
+}
+section#topup-ff .sub-header-bar .container,
+section#topup-ml .sub-header-bar .container { display: flex; justify-content: space-between; align-items: center; }
+section#topup-ff .sub-nav ul,
+section#topup-ml .sub-nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 1.5rem; }
+section#topup-ff .sub-nav a,
+section#topup-ml .sub-nav a { color: #c0c0c0; transition: color 0.2s ease; }
+section#topup-ff .sub-nav a:hover,
+section#topup-ml .sub-nav a:hover { color: #fff; }
+section#topup-ff .sub-nav i,
+section#topup-ml .sub-nav i { margin-right: 0.5rem; color: #00e676; }
+section#topup-ff .user-status,
+section#topup-ml .user-status { color: #c0c0c0; }
+section#topup-ff .user-status i,
+section#topup-ml .user-status i { margin-right: 0.5rem; color: #00e676; }
+
+section#topup-ff .game-hero-banner,
+section#topup-ml .game-hero-banner {
+    position: relative; width: 100%; min-height: 25rem; background-color: #121212; overflow: hidden;
+    display: flex; align-items: flex-end; padding-bottom: 1.5rem;
+}
+section#topup-ff .banner-image-wrapper,
+section#topup-ml .banner-image-wrapper { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+section#topup-ff .banner-main-image,
+section#topup-ml .banner-main-image { width: 100%; height: 100%; object-fit: cover; filter: brightness(40%) grayscale(50%); }
+section#topup-ff .banner-logo,
+section#topup-ml .banner-logo { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 12rem; height: auto; z-index: 2; filter: drop-shadow(0 0 0.8rem rgba(0,0,0,0.5)); }
+section#topup-ff .game-info-overlay,
+section#topup-ml .game-info-overlay { position: relative; z-index: 3; width: 100%; text-align: center; color: #fff; text-shadow: 0.0625rem 0.0625rem 0.1875rem rgba(0,0,0,0.8); }
+section#topup-ff .game-info-overlay h2,
+section#topup-ml .game-info-overlay h2 { font-size: 2.8rem; margin-bottom: 0.5rem; }
+section#topup-ff .game-info-overlay .game-developer,
+section#topup-ml .game-info-overlay .game-developer { font-size: 1.1rem; color: #c0c0c0; margin-bottom: 1rem; }
+section#topup-ff .game-status-indicators,
+section#topup-ml .game-status-indicators { display: flex; justify-content: center; gap: 1.5rem; font-size: 0.9rem; color: #e0e0e0; }
+section#topup-ff .game-status-indicators i,
+section#topup-ml .game-status-indicators i { color: #00e676; margin-right: 0.4rem; }
+
+section#topup-ff .main-content-grid,
+section#topup-ml .main-content-grid {
+    display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; padding-top: 3rem; padding-bottom: 5rem;
+}
+section#topup-ff .main-form-column,
+section#topup-ml .main-form-column {
+    background-color: #1a1a1a; padding: 2rem; border-radius: 0.75rem; box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.5);
+}
+section#topup-ff .sidebar-card,
+section#topup-ml .sidebar-card {
+    background-color: #1a1a1a; padding: 1.5rem; border-radius: 0.75rem; box-shadow: 0 0.3rem 0.9rem rgba(0,0,0,0.3); margin-bottom: 1.5rem; border: 0.0625rem solid rgba(255,255,255,0.05);
+}
+section#topup-ff .sidebar-card:last-child,
+section#topup-ml .sidebar-card:last-child { margin-bottom: 0; }
+section#topup-ff .sidebar-card h3,
+section#topup-ml .sidebar-card h3 { font-size: 1.4rem; text-align: left; margin-bottom: 1rem; color: #00e676; text-shadow: none; }
+section#topup-ff .sidebar-card p,
+section#topup-ml .sidebar-card p { font-size: 0.95rem; color: #c0c0c0; margin-bottom: 1rem; line-height: 1.5; }
+section#topup-ff .rating-display span,
+section#topup-ml .rating-display span { font-size: 2rem; font-weight: 700; color: #fff; margin-right: 0.5rem; }
+section#topup-ff .rating-display .stars i,
+section#topup-ml .rating-display .stars i { color: #ffb300; font-size: 1.2rem; }
+section#topup-ff .rating-display p,
+section#topup-ml .rating-display p { font-size: 0.85rem; color: #888; margin-top: 0.5rem; }
+section#topup-ff .full-width-btn,
+section#topup-ml .full-width-btn { width: 100%; margin-left: 0; }
+
+section#topup-ff .form-step-card,
+section#topup-ml .form-step-card {
+    background-color: #1e1e1e; border-radius: 0.75rem; box-shadow: 0 0.3rem 0.9rem rgba(0,0,0,0.3); margin-bottom: 2rem; border: 0.0625rem solid rgba(255,255,255,0.05);
+}
+section#topup-ff .form-step-card .step-header,
+section#topup-ml .form-step-card .step-header {
+    background-color: #2a2a2a; padding: 0.8rem 1.5rem; border-top-left-radius: 0.75rem; border-top-right-radius: 0.75rem; display: flex; align-items: center; gap: 0.8rem; border-bottom: 0.0625rem solid rgba(255,255,255,0.1);
+}
+section#topup-ff .form-step-card .step-number,
+section#topup-ml .form-step-card .step-number {
+    background-color: #00e676; color: #121212; font-family: 'Michroma', sans-serif; width: 1.8rem; height: 1.8rem; border-radius: 50%;
+    display: flex; justify-content: center; align-items: center; font-weight: bold; font-size: 1.1rem;
+}
+section#topup-ff .form-step-card h3,
+section#topup-ml .form-step-card h3 { font-size: 1.3rem; margin: 0; text-align: left; color: #fff; text-shadow: none; }
+section#topup-ff .form-step-card .step-content,
+section#topup-ml .form-step-card .step-content { padding: 1.5rem; }
+
+/* Order Form Common Input Styles (Duplikasi) */
+.order-form { display: flex; flex-direction: column; gap: 1.5625rem; margin-top: 1.875rem; }
+.input-group { text-align: left; }
+.input-group label { display: block; margin-bottom: 0.625rem; font-weight: 600; color: #f0f0f0; font-size: 1.1em; }
+.input-group input[type="text"], .input-group select {
+    width: calc(100% - 1.5rem); padding: 0.75rem; border: 0.0625rem solid #444; border-radius: 0.5rem; background-color: #1a1a1a; color: #fff; font-size: 1.05em; outline: none;
+    box-shadow: inset 0 0.125rem 0.3125rem rgba(0,0,0,0.3); transition: border-color 0.3s ease, box-shadow 0.3s ease; -webkit-appearance: none; -moz-appearance: none; appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23cccccc%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13.6-6.4H18.9c-5%200-9.6%202-13.6%206.4-8%208-8%2020.9%200%2028.9l128.8%20128.8c4.8%204.8%2011.6%207.6%2019%207.6s14.2-2.8%2019-7.6l128.8-128.8c8-8%208-20.9%200-28.9z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat; background-position: right 0.9375rem top 50%; background-size: 0.875rem auto; padding-right: 2.5rem;
+}
+.input-group input[type="text"]:focus, .input-group select:focus { border-color: #00e676; box-shadow: inset 0 0.125rem 0.3125rem rgba(0,0,0,0.5), 0 0 0.625rem rgba(0, 230, 118, 0.5); }
+.options-group { text-align: left; background-color: #1e1e1e; padding: 1.25rem; border-radius: 0.75rem; box-shadow: 0 0.25rem 0.9375rem rgba(0,0,0,0.4); border: 0.0625rem solid rgba(255,255,255,0.08); }
+.options-group h4 { color: #00e676; margin-bottom: 1.25rem; text-align: center; font-size: 1.3em; text-shadow: 0.0625rem 0.0625rem 0.1875rem rgba(0,0,0,0.5); }
+.radio-label { display: flex; align-items: center; margin-bottom: 0.75rem; cursor: pointer; background-color: #1a1a1a; padding: 0.75rem 1.125rem; border-radius: 0.5rem; transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; border: 0.0625rem solid transparent; font-size: 1.05em; color: #c0c0c0; }
+.radio-label:hover { background-color: #2a2a2a; border-color: #00e676; box-shadow: 0 0.125rem 0.5rem rgba(0, 230, 118, 0.2); }
+.radio-label input[type="radio"] { opacity: 0; position: absolute; left: -9999px; }
+.radio-label span { display: inline-block; width: 1.375rem; height: 1.375rem; border-radius: 50%; border: 0.125rem solid #00e676; background-color: #121212; position: relative; margin-right: 0.75rem; flex-shrink: 0; transition: background-color 0.2s ease, border-color 0.2s ease; }
+.radio-label input[type="radio"]:checked + span { background-color: #00e676; border-color: #00e676; }
+.radio-label input[type="radio"]:checked + span::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 0.75rem; height: 0.75rem; border-radius: 50%; background-color: #fff; }
+.error-message { color: #ff3d00; font-size: 0.95em; margin-top: -0.9375rem; margin-bottom: 0.9375rem; text-align: center; font-weight: 600; }
+
+/* How to Order / Process (Duplikasi) */
+.how-to-order { background-color: #1e1e1e; border: 0.0625rem solid rgba(255,255,255,0.08); border-radius: 0.75rem; box-shadow: 0 0.625rem 1.875rem rgba(0,0,0,0.6); padding: 3.125rem; margin-top: 5rem; text-align: left; position: relative; overflow: hidden; }
+.how-to-order::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 0.3125rem; background: linear-gradient(to right, #00e676, #6200ea); transform: translateY(-100%); transition: transform 0.3s ease; }
+.how-to-order:hover::before { transform: translateY(0); }
+.how-to-order:hover { box-shadow: 0 0.9375rem 2.5rem rgba(0,0,0,0.8); }
+.how-to-order h3 { font-family: 'Michroma', sans-serif; color: #00e676; margin-bottom: 2.1875rem; text-align: center; font-size: 2.5em; text-transform: uppercase; letter-spacing: 0.09375rem; text-shadow: 0.0625rem 0.0625rem 0.1875rem rgba(0,0,0,0.5); }
+.how-to-order ol { list-style: none; padding: 0; margin-bottom: 0; counter-reset: step-counter; }
+.how-to-order ol li { margin-bottom: 1.125rem; font-size: 1.15em; color: #e0e0e0; position: relative; padding-left: 3.125rem; }
+.how-to-order ol li::before { background-color: #6200ea; color: #fff; width: 2.1875rem; height: 2.1875rem; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: bold; font-size: 1em; box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.4); }
+
+/* --- Responsive Design (Duplikasi di semua CSS) --- */
+@media (max-width: 1024px) {
+    html { font-size: 15px; }
+    h1 { font-size: 3.8rem; } h2 { font-size: 2.5rem; } h3 { font-size: 1.8rem; } h4 { font-size: 1.1rem; }
+    .content-section { padding: 4rem 0; } .section-description { font-size: 1.1em; margin-bottom: 2.5rem; }
+    .feature-grid, .game-cards, .testimonial-grid, .game-selection-grid { gap: 2rem; }
+    .feature-card, .game-card, .game-select-card, .testimonial-card, .how-to-order { padding: 2.5rem; }
+    .game-card img { height: 12.5rem; } .game-select-card img { max-width: 10rem; height: 10rem; }
+    .order-form { gap: 1.25rem; } .input-group label { font-size: 1em; }
+    .input-group input[type="text"], .input-group select { padding: 0.625rem; font-size: 0.95em; padding-right: 2rem; background-position: right 0.625rem top 50%; background-size: 0.75rem auto; }
+    .radio-label { padding: 0.625rem 1rem; font-size: 0.95em; } .radio-label span { width: 1.25rem; height: 1.25rem; } .radio-label input[type="radio"]:checked + span::after { width: 0.625rem; height: 0.625rem; }
+    .how-to-order ol li { font-size: 1.05em; padding-left: 2.5rem; } .how-to-order ol li::before { width: 1.875rem; height: 1.875rem; font-size: 0.8em; }
+    footer { padding: 3rem 0 1.5rem; } .footer-content { margin-bottom: 2rem; } .footer-info, .footer-social { margin-bottom: 1.5rem; } .footer-info h3, .footer-social h3 { font-size: 1.4em; } .footer-social a { font-size: 1.8em; margin: 0 0.8rem; }
+
+    /* Topup Options Grid - Responsive Tablet/Desktop (perbaikan) */
+    .options-group.topup-options-grid {
+        grid-template-columns: repeat(auto-fit, minmax(6.5rem, 1fr)); /* Bisa 4-5 kolom tergantung lebar */
+        gap: 0.5rem; /* Jarak tetap */
+    }
+    .radio-label.topup-item-card {
+        padding: 0.5rem 0.7rem; /* Padding lebih kecil untuk muat */
+        font-size: 0.7rem; /* Ukuran font lebih kecil */
+    }
+    .radio-label.topup-item-card .nominal-text {
+        font-size: 0.7rem; /* Ukuran font nominal lebih kecil */
+        margin-bottom: 0.1rem;
+    }
+    .radio-label.topup-item-card .price-display {
+        font-size: 0.75rem; /* Ukuran font harga lebih kecil */
+    }
+    /* Game Hero Banner Responsive */
+    .game-hero-banner { min-height: 20rem; }
+    .game-info-overlay h2 { font-size: 2.2rem; }
+    .game-info-overlay .game-developer { font-size: 1rem; }
+    .banner-image-wrapper .banner-logo { max-width: 9rem; }
+    .game-status-indicators { gap: 0.8rem; font-size: 0.8rem; }
+}
+
+@media (max-width: 768px) {
+    html { font-size: 14px; }
+    h1 { font-size: 3rem; } h2 { font-size: 2.2rem; } h3 { font-size: 1.7rem; } h4 { font-size: 1rem; }
+    header .container { padding: 0 1rem; } .logo a { font-size: 1.8rem; } .main-nav { top: 4.5rem; } .main-nav ul { padding: 1rem; } .nav-toggle { font-size: 1.8rem; }
+    .content-section { padding: 3rem 0; } .section-description { font-size: 1em; margin-bottom: 2rem; }
+    .game-cards, .game-selection-grid { gap: 1.5rem; margin-top: 2rem; grid-template-columns: 1fr; }
+    .game-card, .game-select-card, .how-to-order { padding: 2rem; box-shadow: 0 0.5rem 1.25rem rgba(0,0,0,0.5); }
+    .game-card:hover, .game-select-card:hover, .how-to-order:hover { transform: translateY(-0.5rem); box-shadow: 0 0.75rem 1.875rem rgba(0,0,0,0.7); }
+    .game-card img { height: 10rem; } .game-select-card img { max-width: 8rem; height: 8rem; } .game-select-card h3 { font-size: 1.8em; }
+    .order-form { gap: 1rem; } .input-group label { font-size: 0.9em; }
+    .input-group input[type="text"], .input-group select { padding: 0.5rem; font-size: 0.9rem; padding-right: 1.5rem; background-position: right 0.5rem top 50%; background-size: 0.625rem auto; }
+    .options-group { padding: 0.8rem; } .options-group h4 { font-size: 1.1em; margin-bottom: 0.8rem; } .radio-label { padding: 0.6rem 0.8rem; font-size: 0.95em; }
+    .radio-label span { width: 1.125rem; height: 1.125rem; } .radio-label input[type="radio"]:checked + span::after { width: 0.5rem; height: 0.5rem; }
+    .how-to-order ol li { font-size: 1em; padding-left: 2.5rem; } .how-to-order ol li::before { width: 1.75rem; height: 1.75rem; font-size: 0.8em; }
+    footer { padding: 2.5rem 0 1.5rem; } .footer-content { margin-bottom: 2rem; } .footer-info, .footer-social { margin-bottom: 1.5rem; } .footer-info h3, .footer-social h3 { font-size: 1.5em; } .footer-social a { font-size: 1.8em; margin: 0 0.8rem; }
+
+    /* Topup Options Grid - Responsive Mobile (perbaikan) */
+    .options-group.topup-options-grid {
+        grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr)); /* Kolom lebih rapat di mobile */
+        gap: 0.3rem;
+    }
+    .radio-label.topup-item-card {
+        padding: 0.3rem 0.4rem; /* Padding sangat kecil */
+        font-size: 0.6rem; /* Font ukuran sangat kecil agar banyak item muat */
+    }
+    .radio-label.topup-item-card .nominal-text {
+        font-size: 0.65rem; /* Font nominal sedikit lebih besar */
+        margin-bottom: 0.05rem; /* Jarak sangat kecil */
+    }
+    .radio-label.topup-item-card .price-display {
+        font-size: 0.7rem; /* Font harga sedikit lebih besar */
+    }
+    /* Game Hero Banner Responsive Mobile */
+    .game-hero-banner { min-height: 12rem; }
+    .game-info-overlay h2 { font-size: 1.5rem; }
+    .game-info-overlay .game-developer { font-size: 0.8rem; }
+    .banner-image-wrapper .banner-logo { max-width: 5rem; }
+    .game-status-indicators { gap: 0.5rem; font-size: 0.7rem; }
+}
+
+@media (max-width: 480px) {
+    html { font-size: 13px; }
+    .container { padding: 0 0.8rem; }
+    h1 { font-size: 2.5rem; } h2 { font-size: 1.8rem; } h3 { font-size: 1.4rem; } h4 { font-size: 0.9rem; }
+    .hero-content h1 { font-size: 2rem; } .hero-content p { font-size: 0.9rem; } .btn { padding: 0.6rem 1.2rem; font-size: 0.75rem; border-radius: 40px; }
+    .feature-card, .game-card, .game-select-card, .how-to-order { padding: 1.5rem; }
+    .game-card img { height: 8rem; } .game-select-card img { max-width: 7rem; height: 7rem; } .game-select-card h3 { font-size: 1.8em; }
+    .input-group label { font-size: 0.9em; }
+    .input-group input[type="text"], .input-group select { padding: 0.4rem; font-size: 0.85rem; padding-right: 1rem; background-position: right 0.4rem top 50%; background-size: 0.5rem auto; }
+    .options-group h4 { font-size: 1em; } .radio-label { padding: 0.5rem 0.8rem; font-size: 0.85em; }
+    .radio-label span { width: 1rem; height: 1rem; } .radio-label input[type="radio"]:checked + span::after { width: 0.4rem; height: 0.4rem; }
+    .how-to-order ol li { font-size: 0.9em; padding-left: 2rem; } .how-to-order ol li::before { width: 1.5rem; height: 1.5rem; font-size: 0.7em; }
+    .footer-info h3, .footer-social h3 { font-size: 1.2em; }
+    /* Topup Options Grid - Responsive Mobile Kecil (perbaikan) */
+    .options-group.topup-options-grid {
+        grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr)); /* Bisa 2 atau 3 kolom tergantung min width */
+        gap: 0.3rem;
+    }
+    .radio-label.topup-item-card {
+        font-size: 0.6rem;
+        padding: 0.3rem 0.4rem;
+        flex-direction: column; /* Kembali ke kolom vertikal */
+        align-items: flex-start; /* Konten di kiri */
+        justify-content: flex-start; /* Konten di atas */
+    }
+    .radio-label.topup-item-card span.custom-radio-check {
+        position: absolute; /* Tetap absolute di pojok */
+        top: 0.2rem;
+        right: 0.2rem;
+        width: 0.7rem; height: 0.7rem; /* Ukuran kecil */
+    }
+    .radio-label.topup-item-card input[type="radio"]:checked + span.custom-radio-check::after {
+        width: 0.3rem; height: 0.3rem;
+    }
+    .radio-label.topup-item-card .nominal-text {
+        font-size: 0.7rem; /* Ukuran font lebih besar */
+        margin-bottom: 0.05rem;
+    }
+    .radio-label.topup-item-card .price-display {
+        font-size: 0.75rem; /* Ukuran harga lebih besar */
+        margin-top: 0;
+        text-align: left;
+        width: auto; /* Width auto agar tidak dipaksa 100% */
+    }
+}
